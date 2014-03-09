@@ -2,15 +2,18 @@
 (function( L, $ ) {
 	'use strict';
 
-	var mapElement, map, streetMap;
-
+	var mapElement, map, zoomControl, streetMap;
 
 	// fix size of map
 	mapElement = $( '#map' );
 	mapElement.height( $( 'footer' ).offset().top - mapElement.offset().top );
 
 	// initialise map
-	map = L.map( 'map' ).setView([ -27, 133.5 ], 3 );
+	map = L.map('map', {zoomControl: false}).setView([ -27, 133.5 ], 3 );
+
+	// Add a zoom control back in, on the right hand side
+	zoomControl = new L.Control.Zoom({position: 'topright'});
+	zoomControl.addTo(map);
 
 	// set Australia bounds (with tolerance) NW -> SE
 	// http://www.ga.gov.au/education/geoscience-basics/dimensions/continental-extremities.html

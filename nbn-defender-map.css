@@ -18,20 +18,30 @@ body {
 
 header {
 	background: #44C5C4;
-	padding: 1em;
 	color: #fff;
-	height: 160px; /* height of logo */
+	height: 80px;
 }
 header h1 {
-	font: bold 200%/1.5 "Courier New", monotype;
-	margin-left: 160px; /* width of badge */
-	padding: 0 1em 0 1em; /* indent from badge */
+	/* More or less a pasta of the Main page's typography */
+	font: 55px/80px "Museo Slab", "Courier New", monotype;
+	text-shadow: 2px 2px 0px rgba(14, 174, 172, 0.75);
+	filter: dropshadow(color=#0eaeac, offx=1, offy=1);
+
+	margin: 0; /* Resetting browser user-agent styling */
+	margin-left: 120px; /* Logo width */
+	padding: 0 20px;
 }
-header img {
+header .logo {
 	position: fixed;
-	top: 1em;
-	left: 1em;
-	/*border: 1px solid #44C5C4;*/
+	top: 5px;
+	left: 10px;
+	z-index: 1;
+
+	width: 120px;
+	height: 120px;
+	background: url(nbn-public-defender.png) no-repeat;
+	background-size: 100%; /* Half size in case mobiles are using the site */
+	text-indent: -9999em;
 }
 
 footer {
